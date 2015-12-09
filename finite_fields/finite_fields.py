@@ -1,3 +1,18 @@
+"""
+FINITE FIELDS ARITHMETIC
+Support finite fields of orders:
+    4, 5, 7, 8, 9, 16, 25, 27, 32, 49
+Irreducible polynomials stored in hash table
+
+Future todos:
+    Can choose irreducible polynomials
+    Raw_input option
+
+For best experience, run interactive.ipynb to see 
+interactive, dynamic arithmetic.
+
+By Vincent Nguyen
+"""
 from itertools import product
 from collections import OrderedDict
 

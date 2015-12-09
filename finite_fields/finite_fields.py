@@ -1,17 +1,37 @@
 """
 FINITE FIELDS ARITHMETIC
-Support finite fields of orders:
-    4, 5, 7, 8, 9, 16, 25, 27, 32, 49
-Irreducible polynomials stored in hash table
+By Vincent Nguyen
 
-Future todos:
+* Support finite fields of orders:
+    4, 5, 7, 8, 9, 16, 25, 27, 32, 49
+* Irreducible polynomials stored in hash table
+
+* Future todos:
     Can choose irreducible polynomials
     Raw_input option
 
 For best experience, run interactive.ipynb to see 
 interactive, dynamic arithmetic.
 
-By Vincent Nguyen
+TO RUN WITHOUT IPYTHON NOTEBOOK:
+>>> from finite_fields import poly
+>>> O = "4"
+>>> A = [1, 1]
+>>> B = [1]
+>>> poly(order = O, p1 = A, p2 = B).main()
+======================================
+ARITHMETIC IN FINITE FIELD OF ORDER 4
+IRREDUCIBLE POLYNOMIAL 1 + x + x^2
+======================================
+1 + x = 1 + x
+1 = 1
+SUM: x
+PRODUCT: 1 + x
+MULTIPLICATIVE INVERSE OF 1 + x : x
+MULTIPLICATIVE INVERSE OF 1 : 1
+QUOTIENT: 1 + x
+''
+
 """
 from __future__ import print_function
 from itertools import product

@@ -13,6 +13,7 @@ interactive, dynamic arithmetic.
 
 By Vincent Nguyen
 """
+from __future__ import print_function
 from itertools import product
 from collections import OrderedDict
 
@@ -223,17 +224,17 @@ class poly(object):
         mult_inverse2 = self.find_mult_inverse(_p2)
         quotient = self.mult(_p1, mult_inverse2)
         
-        print "======================================"
-        print "ARITHMETIC IN FINITE FIELD OF ORDER %s" % self.order 
-        print "IRREDUCIBLE POLYNOMIAL %s" % self.translate(self.irr_poly[self.order][0])
-        print "======================================"
-        print self.translate(self.p1), "=", self.translate(_p1)
-        print self.translate(self.p2), "=", self.translate(_p2)
+        print("======================================")
+        print("ARITHMETIC IN FINITE FIELD OF ORDER %s" % self.order)
+        print("IRREDUCIBLE POLYNOMIAL %s" % self.translate(self.irr_poly[self.order][0]))
+        print("======================================")
+        print(self.translate(self.p1), "=", self.translate(_p1))
+        print(self.translate(self.p2), "=", self.translate(_p2))
         print
-        print "SUM:", self.translate(summ)
-        print "PRODUCT:", self.translate(product)
-        print "MULTIPLICATIVE INVERSE OF", self.translate(self.p1), ":", self.translate(mult_inverse1) 
-        print "MULTIPLICATIVE INVERSE OF", self.translate(self.p2), ":", self.translate(mult_inverse2) 
-        print "QUOTIENT:", self.translate(quotient)
+        print("SUM:", self.translate(summ))
+        print("PRODUCT:", self.translate(product))
+        print("MULTIPLICATIVE INVERSE OF", self.translate(self.p1), ":", self.translate(mult_inverse1)) 
+        print("MULTIPLICATIVE INVERSE OF", self.translate(self.p2), ":", self.translate(mult_inverse2))
+        print("QUOTIENT:", self.translate(quotient))
         
         return ""

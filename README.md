@@ -6,3 +6,4 @@ Programming exploratory problems for MATH152:
 * Euclid GCD
 * Coprimes
 * Permutation cycle products
+* Special linear group isomorphisms

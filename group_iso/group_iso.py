@@ -22,19 +22,24 @@ matrices = list(set(matrices))
 assert((q**2 - 1)*(q**2 - q)/(q-1) == len(matrices))
 
 #2-component vectors over \ZZ_5
-line1 = [(1,0),(2,0),(-2,0),(-1,0)]
-line2 = [(0,1),(0,2),(0,-2),(0,-1)]
-line3 = [(1,1),(2,2),(-2,-2),(-1,-1)]
-line4 = [(1,2),(2,-1),(-2,1),(-1,-2)]
-line5 = [(1,-2),(2,1),(-2,-1),(-1,2)]
-line6 = [(1,-1),(2,-2),(-2,2),(-1,1)]
+line1 = [(1,0),(2,0),(-2,0),(-1,0)] #y = 0
+line2 = [(0,1),(0,2),(0,-2),(0,-1)] #x = 0
+line3 = [(1,1),(2,2),(-2,-2),(-1,-1)] #y = x
+line4 = [(1,2),(2,-1),(-2,1),(-1,-2)] #y = 2x
+line5 = [(1,-2),(2,1),(-2,-1),(-1,2)] #y = -2x
+line6 = [(1,-1),(2,-2),(-2,2),(-1,1)] #y = -x
 
 #subgroup G \in SL(2, \ZZ_5) s.t. G \cong S_3, cosets
 for m in matrices:
+
+	#effect of m on different vector subspaces
 	Mline1 = (m[0] * line1[0][0] + m[1] * line1[0][1], m[2] * line1[0][0] + m[3] * line1[0][1])
 	Mline2 = (m[0] * line2[0][0] + m[1] * line2[0][1], m[2] * line2[0][0] + m[3] * line2[0][1])
 	Mline3 = (m[0] * line3[0][0] + m[1] * line3[0][1], m[2] * line3[0][0] + m[3] * line3[0][1])
-	
+	Mline4 = (m[0] * line4[0][0] + m[1] * line4[0][1], m[2] * line4[0][0] + m[3] * line4[0][1])
+	Mline5 = (m[0] * line5[0][0] + m[1] * line5[0][1], m[2] * line5[0][0] + m[3] * line5[0][1])
+	Mline6 = (m[0] * line6[0][0] + m[1] * line6[0][1], m[2] * line6[0][0] + m[3] * line6[0][1])
+
 	if Mline1 in line2 and Mline2 in line3 and Mline3 in line1:
 		print "(123)", m
 

@@ -29,11 +29,24 @@ line4 = [(1,2),(2,-1),(-2,1),(-1,-2)]
 line5 = [(1,-2),(2,1),(-2,-1),(-1,2)]
 line6 = [(1,-1),(2,-2),(-2,2),(-1,1)]
 
-#matrices that take line1 -> line4 and line2 -> line6
+#subgroup G \in SL(2, \ZZ_5) s.t. G \cong S_3, cosets
 for m in matrices:
-	if (m[0] * line1[0][0] + m[1] * line1[0][1], 
-		m[2] * line1[0][0] + m[3] * line1[0][1]) in line4 and \
-	   (m[0] * line2[0][0] + m[1] * line2[0][1], 
-	   	m[2] * line2[0][0] + m[3] * line2[0][1]) in line6:
-	   print m
+	Mline1 = (m[0] * line1[0][0] + m[1] * line1[0][1], m[2] * line1[0][0] + m[3] * line1[0][1])
+	Mline2 = (m[0] * line2[0][0] + m[1] * line2[0][1], m[2] * line2[0][0] + m[3] * line2[0][1])
+	Mline3 = (m[0] * line3[0][0] + m[1] * line3[0][1], m[2] * line3[0][0] + m[3] * line3[0][1])
+	
+	if Mline1 in line2 and Mline2 in line3 and Mline3 in line1:
+		print "(123)", m
+
+	if Mline1 in line3 and Mline3 in line2 and Mline2 in line1:
+		print "(132)", m
+
+	if Mline1 in line2 and Mline3 in line3 and Mline2 in line1:
+		print "(12)(3)", m
+
+	if Mline2 in line3 and Mline1 in line1 and Mline3 in line2:
+		print "(1)(23)", m
+
+	if Mline2 in line2 and Mline1 in line3 and Mline3 in line1:
+		print "(2)(13)", m
 

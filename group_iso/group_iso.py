@@ -6,6 +6,9 @@ n = 2
 #field order
 q = 5
 
+#det
+d = 1
+
 #elements in \ZZ_5
 elements = [-2, -1, 0, 1, 2]
 basis = [c for c in combinations(elements, n**n)]
@@ -15,11 +18,16 @@ matrices = []
 for b in basis:
 	for p in product(b, repeat=n**n):
 		#det(p) = 1 for SL
-		if (p[0]*p[3]-p[1]*p[2])%5 == 1:
+		if (p[0]*p[3]-p[1]*p[2])%5 == d:
 			matrices.append(p)
 
 matrices = list(set(matrices))
 assert((q**2 - 1)*(q**2 - q)/(q-1) == len(matrices))
+
+print "================"
+print "SL(%d, Z%d)" % (n, q)
+print "Elements:", len(matrices) 
+print "================"
 
 #2-component vectors over \ZZ_5
 line1 = [(1,0),(2,0),(-2,0),(-1,0)] #y = 0
@@ -57,4 +65,5 @@ for m in matrices:
 
 	if Mline2 in line2 and Mline1 in line3 and Mline3 in line1:
 		print "(2)(13)", m
+
 

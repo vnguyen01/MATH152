@@ -29,6 +29,9 @@ line4 = [(1,2),(2,-1),(-2,1),(-1,-2)] #y = 2x
 line5 = [(1,-2),(2,1),(-2,-1),(-1,2)] #y = -2x
 line6 = [(1,-1),(2,-2),(-2,2),(-1,1)] #y = -x
 
+def line_perm(m_on_line, line_x):
+	return True if m_on_line in line_x else False
+
 #subgroup G \in SL(2, \ZZ_5) s.t. G \cong S_3, cosets
 for m in matrices:
 
